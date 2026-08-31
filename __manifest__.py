@@ -1,5 +1,5 @@
 {
-    "name" : "Cambodia Localization - Tax Invoice & Commerical Invoice",
+    "name" : "Khmer Invoice",
     "summary": """
             This addon will add two new print options on Customer Invoices,
             following Cambodia's Tax Invoice and Commercial Invoice
@@ -9,7 +9,7 @@
     "license": "AGPL-3",
     "website": "",
     "category": "Accounting/Localizations",
-    "depend": ["account"],
+    "depends": ["account"],
     "data": [
         "views/res_partner_views.xml",
         "views/report_kh_tax_invoice.xml",

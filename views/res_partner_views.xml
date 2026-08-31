@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <odoo>
-    <record id="view_partner_form_inherit_kh" model="ir.ui.view">
+    <record id="view_partner_form_inherit_kh" model="ir.ui.view"> <!--add kh in contact-->
         <field name="name">res.partner.form.inherit.kh</field>
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_partner_form"/>
@@ -11,7 +11,7 @@
         </field>
     </record>
 
-    <record id="partner_kanban_view_kh" model="ir.ui.view">
+    <record id="partner_kanban_view_kh" model="ir.ui.view"> <!--show under display-->
         <field name="name">res.partner.kanban.inherit.kh</field>
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.res_partner_kanban_view"/>
@@ -23,7 +23,7 @@
         </field>
     </record>
 
-    <record id="res_partner_view_tree_inherit_kh" model="ir.ui.view">
+    <record id="res_partner_view_tree_inherit_kh" model="ir.ui.view"> <!--list-->
         <field name="name">res.partner.view.tree.inherit.khmer.name</field>
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_partner_tree"/>
@@ -34,7 +34,7 @@
         </field>
     </record>
 
-    <record id="view_res_partner_filter_kh" model="ir.ui.view">
+    <record id="view_res_partner_filter_kh" model="ir.ui.view"> <!--search-->
         <field name="name">view.res.partner.filter.inherit.khmer.name</field>
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_res_partner_filter"/>

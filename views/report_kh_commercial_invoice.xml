@@ -71,7 +71,6 @@
                                             <td style="width:150px;padding:0px;"><span>លេខទូរស័ព្ទ (Telephone N0)</span></td>
                                             <td style="padding:0px;">
                                                 : <t t-if="o.partner_id.phone"><span t-field="o.partner_id.phone"/></t>
-                                                <t t-if="o.partner_id.mobile">/ <span t-field="o.partner_id.mobile"/></t>
                                             </td>
                                         </tr>
                                         <tr t-if="o.partner_id.email">
