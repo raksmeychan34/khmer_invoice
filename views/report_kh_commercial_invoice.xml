@@ -22,7 +22,7 @@
                         <div class="header">
                             <div class="row" style="font-size:18px;">
                                 <div class="col-2">
-                                       <img style="max-height:100px;" t-if="company.logo" t-att-src="image_data_uri(company.logo)" alt="Logo"/>
+                                       <img style="max-height:130px;max-width:170px;" t-if="company.logo" t-att-src="image_data_uri(company.logo)" alt="Logo"/>
                                 </div>
                                 <div class="col-9" style="text-align:center;">
                                     <div style="font-family:'Moul', cursive;padding-top:10px;"><h5><span t-esc="company.partner_id.khmer_name"/></h5></div>
@@ -35,8 +35,8 @@
                             </div>
                         </div>
                         <div class="page">
-                            <hr style="border-top:1px solid black; margin-top:10px;"/>
-                            <div class="text-center" style="font-family:'Moul',cursive;padding-top:35px;font-size:16px">
+                            <div style="height:1px;background-color:#000000;margin-top:10px;"/>
+                            <div class="text-center" style="font-family:'Moul',cursive;padding-top:8px;font-size:16px">
                                 <span>វិក្កយបត្រ<br/>Invoice</span>
                             </div>
                             <div class="row">
@@ -87,12 +87,16 @@
                                             <td style="padding:0px;"><span>លេខរៀងវិក្កយបត្រ៖<br/>Invoice N0</span></td>
                                             <td style="padding:0px;">: <span t-field="o.name"/></td>
                                         </tr>
-                                        <t t-set="kh_months" t-value="['មករា','កុម្ភៈ','មីនា','មេសា','ឧសភា','មិថុនា','កក្កដា','សីហា','កញ្ញា','តុលា','វិច្ឆិកា','ធ្នូ']"/>
+                                        <!-- <t t-set="kh_months" t-value="['មករា','កុម្ភៈ','មីនា','មេសា','ឧសភា','មិថុនា','កក្កដា','សីហា','កញ្ញា','តុលា','វិច្ឆិកា','ធ្នូ']"/>
                                         <tr style="">
                                             <td style="padding:0px;"><span>កាលបរិច្ឆេទ៖<br/>Date</span></td>
                                             <td style="padding:0px;">
                                                 : <span t-if="o.invoice_date" t-esc="'%02d/%s/%d' % (o.invoice_date.day, kh_months[o.invoice_date.month-1], o.invoice_date.year)"/>
                                             </td>
+                                        </tr> -->
+                                        <tr style="">
+                                            <td style="padding:0px;"><span>កាលបរិច្ឆេទ៖<br/>Date:/dd/mm/yy</span></td>
+                                            <td style="padding:0px;">: <span t-field="o.invoice_date" t-options="{'format': 'dd/MM/yyyy'}"/></td>
                                         </tr>
                                     </table>
                                 </div>
@@ -138,13 +142,13 @@
                                         <td class="text-center" style="border:1px solid black;padding:5px;">
                                             <span t-esc="'{0:,.2f}'.format(l.price_unit)"/>
                                         </td>
-                                        <td class="text-right" style="border:1px solid black;padding:5px;">
+                                        <td class="text-end" style="border:1px solid black;padding:5px;">
                                             <span t-field="l.price_total" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
                                         </td>
                                     </tr>
                                     <tr style="page-break-inside:avoid">
                                         <td class="text-right" colspan="4" style="text-align:right;font-weight:bold;padding:5px;">សរុបរួម / Grand Total</td>
-                                        <td class="text-right" style="padding:5px;border:1px solid black;font-weight:bold;">
+                                        <td class="text-end" style="padding:5px;border:1px solid black;font-weight:bold;">
                                             <span t-field="o.amount_total" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
                                         </td>
                                     </tr>
@@ -156,7 +160,7 @@
                             <div class="row" style="font-family:'Khmer Os Battambang',cursive;padding-top:150px;">
                                 <div class="col-4" style="font-size:14px;margin-top: 30px;">
                                     <div style="border-bottom: 1px solid black; margin-top: 30px;"/>
-                                    <div class="text-center" style="font-size:14px;margin-top: 18px;">ហត្ថលេខានិងឈ្មោះអ្នកទិញ</div>
+                                    <div class="text-center" style="font-size:14px;margin-top: 18px;">ហត្ថលេខានិងឈ្មោះអតិថិជន</div>
                                     <div class="text-center" style="font-size:14px">Customer's Signature &amp; Name</div>
                                 </div>
                                 <div class="col-4 text-center" style="font-size:14px;margin-top: 30px;"/>
@@ -168,8 +172,9 @@
                             </div>
                         </div>
                         <div class="footer">
-                            <div class="text-left" style="font-size:10px;">
-                                Page <span class="page"/> / <span class="topage"/>
+                            <div class="text-center" style="border-top:1px solid black;padding-top:14px;font-size:9px;color:black;">
+                                <div><span t-field="o.name"/></div>
+                                <div>Page <span class="page"/> / <span class="topage"/></div>
                             </div>
                         </div>
                     </div>
