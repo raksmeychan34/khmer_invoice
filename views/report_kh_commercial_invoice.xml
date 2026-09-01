@@ -22,7 +22,7 @@
                         <div class="header">
                             <div class="row" style="font-size:18px;">
                                 <div class="col-2">
-                                    <img style="max-height:100px;" t-if="company.logo" t-att-src="image_data_uri(company.logo)" alt="Logo"/>
+                                    <img style="max-height:100px;" t-if="company.logo or company.kh_invoice_default_logo" t-att-src="image_data_uri(company.logo or company.kh_invoice_default_logo)" alt="Logo"/>
                                 </div>
                                 <div class="col-9" style="text-align:center;">
                                     <div style="font-family:'Moul', cursive;padding-top:10px;"><h5><span t-esc="company.partner_id.khmer_name"/></h5></div>
@@ -80,7 +80,7 @@
                                         </tr>
                                     </table>
                                 </div>
-                                <div>
+                                <div class="col-4">
                                     <table class="table table-borderless" style="font-family:'Khmer Os Battambang',cursive;font-size:14px;">
                                         <tr style="">
                                             <td style="padding:0px;"><span>លេខរៀងវិក្កយបត្រ៖<br/>Invoice N0</span></td>
