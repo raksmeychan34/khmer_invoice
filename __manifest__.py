@@ -12,6 +12,7 @@
     "depends": ["account"],
     "data": [
         "views/res_partner_views.xml",
+        "views/report_paperformat_kh_invoice.xml",
         "views/report_kh_tax_invoice.xml",
         "views/report_kh_commercial_invoice.xml",
     ],

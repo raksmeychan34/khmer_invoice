@@ -184,6 +184,7 @@
 
         <record id="action_report_kh_commercial_invoice" model="ir.actions.report">
             <field name="name">Commercial Invoice</field>
+            <field name="paperformat_id" ref="khmer_invoice.paperformat_kh_invoice"/>
             <field name="model">account.move</field>
             <field name="report_type">qweb-pdf</field>
             <field name="report_name">khmer_invoice.report_kh_commercial_invoice</field>
