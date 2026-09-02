@@ -20,7 +20,10 @@
                     </t>
 
                     <div class="article" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id" t-att-data-oe-lang="o and o.env.context.get('lang')">
-                        <div class="header">
+                        <!-- <div class="header"> -->
+                            
+                        <!-- </div> -->
+                        <div class="page">
                             <div class="row" style="font-size:18px;">
                                 <div class="col-2">
                                        <img style="max-height:130px;max-width:170px;" t-if="company.logo" t-att-src="image_data_uri(company.logo)" alt="Logo"/>
@@ -34,8 +37,6 @@
                                     <div style="font-size:12px;font-family:'Khmer Os Battambang',cursive;">លេខទូរស័ព្ទ/Telephone N0: <span t-esc="company.partner_id.phone"/>  </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="page">
                             <div style="height:1px;background-color:#000000;margin-top:10px;"/>
                             <div class="text-center" style="font-family:'Moul',cursive;padding-top:8px;font-size:16px">
                                 <span>វិក្កយបត្រអាករ<br/>Tax Invoice</span>
