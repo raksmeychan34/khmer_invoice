@@ -15,6 +15,7 @@
         "views/report_paperformat_kh_invoice.xml",
         "views/report_kh_tax_invoice.xml",
         "views/report_kh_commercial_invoice.xml",
+        "views/report_invoice_tax.xml",
     ],
     "images": ["static/description/icon.png"],
     "installable": True,
