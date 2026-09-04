@@ -20,7 +20,7 @@
                     </t>
                 </t>
 
-                <t t-call="erp_report_layout.external_layout_erp_cambodia_no_head">
+                <!-- <t t-call="erp_report_layout.external_layout_erp_cambodia_no_head"> -->
                     <t t-set="show_invoice_ref" t-value="True"/>
                     <style>
                         .erp-title {
@@ -30,7 +30,7 @@
                             font-weight: bold;
                         }
                         .erp-text{
-                            font-size: 12px;
+                            font-size: 11px;
                             font-family: Battambang;
                             padding-bottom: 3px;
                         }
@@ -43,24 +43,25 @@
                         }
 
                     </style>
+                <div class="article" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id" t-att-data-oe-lang="o and o.env.context.get('lang')">
                     <div class="row mb8">
                         <div class="col-4 mb2">
                             <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" alt="Logo" style="max-height: 150px; margin-top:10px;"/>
                         </div>
                         <div class="col-8 mb6" style="margin-top:10px;">
-                            <h3 class="mt0 erp-title text-left " t-field="company.khmer_name"/>
+                            <!-- <h3 class="mt0 erp-title text-left " t-field="company.khmer_name"/> -->
                             <h4 class="mt0 text-left erp-title-en" t-field="company.name"/>
                             <div name="company_address" class="float-left mb6">
                                 <ul class="list-unstyled erp-text">
-                                    <li style="font-family: 'Battambang'; font-size:12px;" t-if="company.vat">លេខអត្តសញ្ញាណកម្ម អតប (VAT TIN): <strong><span t-field="company.vat"/></strong></li>
-                                    <li style="font-family: 'Battambang'; font-size:12px;" t-if="company.khmer_address">អាស័យដ្ឋាន: <span t-field="company.khmer_address"/></li>
-                                    <li style="font-family: 'Battambang'; font-size:12px;">Address:
+                                    <li style="font-family: 'Battambang'; font-size:13px;" t-if="company.vat">លេខអត្តសញ្ញាណកម្ម អតប (VAT TIN): <strong><span t-field="company.vat"/></strong></li>
+                                    <!-- <li style="font-family: 'Battambang'; font-size:12px;" t-if="company.khmer_address">អាស័យដ្ឋាន: <span t-field="company.khmer_address"/></li> -->
+                                    <li style="font-family: 'Battambang'; font-size:13px;">Address:
                                         <span t-if="company.street" t-esc="company.street"/>,
                                         <span t-if="company.city" t-esc="company.city"/>
                                         <!--<span t-if="company.country_id" t-esc="company.country_id.name"/>-->
                                     </li>
-                                    <li style="font-size:12px;">ទូរស័ព្ទលេខ: <span class="" t-field="company.phone"/> / Telephone No: (855) 16 928 929</li>
-                                    <li style="font-size:12px;">សារអេឡិចត្រូនិច (E-mail): <span class="" t-field="company.email"/></li>
+                                    <li style="font-size:13px;">ទូរស័ព្ទលេខ: <span class="" t-field="company.phone"/> / Telephone No: (855) 16 928 929</li>
+                                    <li style="font-size:13px;">សារអេឡិចត្រូនិច (E-mail): <span class="" t-field="company.email"/></li>
                                 </ul>
                             </div>
                         </div>
@@ -97,13 +98,14 @@
                                     <div class="col-4">
                                         <div class="erp-text">Company Name</div>
                                     </div>
-                                    <div class="col-8">
+                                    <div class="col-7">
                                         <div class="erp-text">
                                             : <span t-esc="o.partner_id.name"/>
                                         </div>
                                     </div>
                                 </div>
 
+                                <!--
                                 <div class="row">
                                     <div class="col-4">
                                         <div class="erp-text">អាស័យដ្ឋាន</div>
@@ -114,6 +116,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                -->
                                 <div class="row">
                                     <div class="col-4">
                                     <div class="erp-text"><span>Address</span></div>
@@ -149,9 +152,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-4">
-                                        <div class="erp-text">លេខអត្តសញ្ញាណកម្ម អតប
-                                        <br/>
-                                        (VAT TIN)</div>
+                                        <div class="erp-text">លេខអត្តសញ្ញាណកម្ម អតប (VAT TIN)</div>
                                     </div>
                                     <div class="col-8">
                                         <div class="erp-text">
@@ -160,6 +161,7 @@
                                     </div>
                                 </div>
 
+                                <!--
                                 <div class="row" t-if="o.attend_id">
                                     <div class="col-4">
                                         <div class="erp-text">ឈ្មោះអ្នកទិញ/Attend To</div>
@@ -170,6 +172,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                -->
 
                             </div>
 
@@ -178,7 +181,7 @@
                                     <div class="col-5">
                                         <div class="erp-text">លេខវិក្កយបត្រ/No</div>
                                     </div>
-                                    <div class="col-7">
+                                    <div class="col-8">
                                         <div class="erp-text">:
                                             <span t-if="o.move_type == 'out_invoice' and o.state == 'posted'">
                                                 <span t-if="o.name != '/'" t-field="o.name"/>
@@ -213,6 +216,7 @@
                                 <!--        </div>-->
                                 <!--    </div>-->
                                 <!--</div>-->
+                                <!--
                                 <div class="row">
                                     <div class="col-5">
                                         <div class="erp-text">Quote No</div>
@@ -273,19 +277,20 @@
                                         </div>
                                     </div>
                                 </div>
+                                -->
                             </div>
                         </div>
                         <t t-set="display_discount" t-value="any(l.discount for l in o.invoice_line_ids)"/>
 
                         <table class="table table-sm o_main_table" name="invoice_line_table">
-                            <thead>
+                            <thead style="display: table-row-group;">
                                 <tr class="erp-border">
-                                    <th name="th_description" class="text-center erp-text erp-border erp-table-header" style="width: 5%"><span>ល.រ<br/>No</span></th>
-                                    <th name="th_description" class="text-center erp-text erp-border erp-table-header" style="width: 40%"><span>បរិយាយមុខទំនិញ <br/>Description</span></th>
+                                    <th name="th_description" class="text-center erp-text erp-border erp-table-header" style="width: 5%; font-weight: bold;"><span>ល.រ<br/>No</span></th>
+                                    <th name="th_description" class="text-center erp-text erp-border erp-table-header" style="width: 40%; font-weight: bold;"><span>បរិយាយមុខទំនិញ <br/>Description</span></th>
                                     <!--<th name="th_description" class="text-center erp-text erp-border erp-table-header" style="width: 10%"><span>លេខគណនយ្យ <br/>Account ID</span></th>-->
-                                    <th name="th_quantity" class="text-center erp-text erp-border erp-table-header" style="width: 10%"><span>បរិមាណ <br/>Quantity</span></th>
-                                    <th name="th_price_unit" class="text-center erp-text erp-border erp-table-header" style="width: 10%"><span>ថ្លៃឯកតា<br/>Unit Price</span></th>
-                                    <th name="th_subtotal" class="text-center erp-text erp-border erp-table-header" style="width: 15%">
+                                    <th name="th_quantity" class="text-center erp-text erp-border erp-table-header" style="width: 10%; font-weight: bold;"><span>បរិមាណ <br/>Quantity</span></th>
+                                    <th name="th_price_unit" class="text-center erp-text erp-border erp-table-header" style="width: 10%; font-weight: bold;"><span>ថ្លៃឯកតា<br/>Unit Price</span></th>
+                                    <th name="th_subtotal" class="text-center erp-text erp-border erp-table-header" style="width: 15%; font-weight: bold;">
                                         <span>ថ្លៃទំនិញ <br/>Amount</span>
                                     </th>
                                 </tr>
@@ -310,11 +315,11 @@
                                                 <!--<br/>-->
                                                 <!--<span t-field="line.product_id.name" t-options="{'widget': 'text'}"/>-->
                                             </td>
-                                            <td class="erp-center erp-text erp-border">
+                                            <td class="text-center erp-text erp-border">
                                                 <span t-field="line.quantity"/>
                                                 <span t-field="line.product_uom_id" groups="uom.group_uom"/>
                                             </td>
-                                            <td t-attf-class="erp-center {{ 'd-none d-md-table-cell' if report_type == 'html' else '' }} erp-text erp-border">
+                                            <td t-attf-class="text-center {{ 'd-none d-md-table-cell' if report_type == 'html' else '' }} erp-text erp-border">
                                                  <span t-field="line.price_unit" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.currency_id}"/>
                                             </td>
                                             <td t-if="display_discount" t-attf-class="text-right {{ 'd-none d-md-table-cell' if report_type == 'html' else '' }} erp-text erp-border">
@@ -381,6 +386,7 @@
                                         <span t-field="o.amount_total"/>
                                     </th>
                                 </tr>
+                                <!--
                                 <tr class="erp-border border-black" t-if="o.currency_id.name != 'KHR'">
                                     <th colspan="4" class="erp-text text-end erp-border">
                                         <span>អត្រាប្ដូរប្រាក់ - Exchange Rate</span>
@@ -397,6 +403,7 @@
                                         <span t-esc="(o.amount_total * o.exchange_rate)" t-options="{'widget': 'monetary', 'display_currency': o.khr_currency_id}"/>
                                     </th>
                                 </tr>
+                                -->
                             </tbody>
                         </table>
 
@@ -436,7 +443,7 @@
                             </div>
                         </div>
                         
-                        <div class="row" style="page-break-before: always;">
+                        <div class="row">
                             <div class="col-9">
                                 <div class="erp-text">
                                     <div>
@@ -476,9 +483,20 @@
                         </div>
                         <br/>
                     </div>
-                </t>
+                </div>
+                <!-- </t> -->
             </t>
         </t>
     </template>
-
+    <record id="action_report_invoice_tax" model="ir.actions.report">
+        <field name="name">Tax Invoice (Bank Details)</field>
+        <field name="model">account.move</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">khmer_invoice.report_invoice_tax</field>
+        <field name="report_file">khmer_invoice.report_invoice_tax</field>
+        <field name="binding_model_id" ref="account.model_account_move"/>
+        <field name="binding_type">report</field>
+        <field name="paperformat_id" ref="khmer_invoice.paperformat_kh_invoice"/>
+        <field name="print_report_name">('%s_TIB_%s' % (object.partner_id.name,object.name))</field>
+    </record>
 </odoo>
