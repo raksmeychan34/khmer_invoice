@@ -325,7 +325,7 @@
                                             <td t-if="display_discount" t-attf-class="text-right {{ 'd-none d-md-table-cell' if report_type == 'html' else '' }} erp-text erp-border">
                                                 <span class="text-nowrap" t-field="line.discount"/>
                                             </td>
-                                            <td class="erp-right o_price_total erp-text erp-border" style="text-align:right;">
+                                            <td class="erp-right o_price_total erp-text erp-border">
                                                 <span class="text-nowrap" t-field="line.price_subtotal"/>
                                             </td>
                                         </t>
@@ -344,7 +344,7 @@
                                     </tr>
 
                                     <t t-if="current_section and (line_last or lines[line_index+1].display_type == 'line_section')">
-                                        <tr class="is-subtotal text-right erp-text">
+                                        <tr class="is-subtotal text-right erp-text erp-border">
                                             <td colspan="99">
                                                 <strong class="mr16">Subtotal</strong>
                                                 <span t-esc="current_subtotal" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.currency_id}"/>
@@ -361,45 +361,45 @@
                                 <t t-set="amount_untaxed_khr" t-value="0.0"/>
                                 <t t-set="amount_untaxed_khr" t-value="round(amount_total_khr-amount_tax_khr,0)"/>
 
-                                <tr class="erp-text">
-                                    <th colspan="4" class="text-end" style="border:none; width:85%; font-weight:bold;">
+                                <tr class="erp-text erp-border border-none">
+                                    <th colspan="4" class="text-end erp-border">
                                         <span>សរុប - Subtotal</span>
                                     </th>
-                                    <th class="erp-text text-end erp-border" style="border:1px solid black; width:15%; font-weight:bold;">
+                                    <th class="erp-text text-end" style="border:none;">
                                         <span t-field="o.amount_untaxed"/>
                                     </th>
                                 </tr>
-                                <tr class="erp-text">
-                                    <th colspan="4" class="text-end" style="border:none; width:85%; font-weight:bold;">
+                                <tr class="erp-text erp-border border-none">
+                                    <th colspan="4" class="text-end erp-border">
                                         <span>អាករលើតម្លៃបន្ថែម - VAT 10%</span>
                                     </th>
-                                    <th class="erp-text text-end erp-border" style="border:1px solid black; width:15%; font-weight:bold;">
+                                    <th class="erp-text text-end" style="border:none;">
                                         <span t-field="o.amount_tax"/>
                                     </th>
                                 </tr>
 
-                                <tr class="erp-text">
-                                    <th colspan="4" class="erp-text text-end" style="border:none; width:85%; font-weight:bold;">
+                                <tr style="border:none;">
+                                    <th colspan="4" class="erp-text text-end" style="border:none;">
                                         <span>សរុបរួម - Grand Total</span>
                                     </th>
-                                    <th class="erp-text text-end erp-border" style="border:1px solid black; width:15%; font-weight:bold;">
+                                    <th class="erp-text text-end" style="border:none;">
                                         <span t-field="o.amount_total"/>
                                     </th>
                                 </tr>
-                                <tr class="erp-text">
-                                    <th colspan="4" class="text-end" style="border:none; width:85%; font-weight:bold;">
-                                        <span>ប្រាក់ដែលបានបង់-Amount Paid</span>
+                                <tr class="erp-text" style="border:none;">
+                                    <th colspan="4" class="text-end" style="border:none;">
+                                        <span>ទឹកប្រាក់ត្រូវបង់-Amount Due:</span>
                                     </th>
-                                    <th class="erp-text text-end erp-border" style="border:1px solid black; width:15%; font-weight:bold;">
-                                        <span t-esc="o.amount_total - o.amount_residual" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                    <th class="erp-text text-end" style="border:none;">
+                                        <span t-field="o.amount_residual" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
                                     </th>
                                 </tr>
-                                <tr class="erp-text">
-                                    <th colspan="4" class="text-end" style="border:none; width:85%; font-weight:bold;">
-                                        <span>ស្ថានភាពទូទាត់-Payment Status</span>
+                                <tr class="erp-text" style="border:none;">
+                                    <th colspan="4" class="text-end" style="border:none;">
+                                        <span>ទឹកប្រាក់អាប់-Change Amount:</span>
                                     </th>
-                                    <th class="erp-text text-end" style="border:1px solid black; width:15%; font-weight:bold;">
-                                        <span t-field="o.payment_state"/>
+                                    <th class="erp-text text-end" style="border:none;">
+                                        <span>$ ______________</span>
                                     </th>
                                 </tr>
                                 <!--
